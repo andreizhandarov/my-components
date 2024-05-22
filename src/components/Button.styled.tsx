@@ -1,15 +1,37 @@
 import { styled } from "styled-components"
 
-export const Button = styled.button`
+type ButtonPropsStyle = {
+  color : string;
+}
+
+export const Button = styled.button<ButtonPropsStyle>`
+  width: 86px;
+  height: 30px;
   border: none;
-  background-color: #c74c4c;
-  border-radius: 5px;
+  background-color: ${props => props.color};
+  border-radius: 5px; 
+  margin: 10px 6px 20px 20px;
+  font-weight: 700;
+  font-size: 10px;
+  line-height: 2;
   color: #fff;
-  padding: 10px 20px;
-  font-size: 2rem;
-  font-weight: bold;
-  
-`
+
+  &:hover{
+    background-color: #fff;
+    border: 2px solid #4e71fe;
+    color: #4e71fe;
+  }
+`;
+
 export const MyButton = styled(Button)`
-  background-color: #2a265a;
-`
+  background-color: #fff;
+  margin: 10px 0px 20px 6px;
+  border: 2px solid #4e71fe;
+  color: #4e71fe;
+
+  &:hover{
+    background-color: #4e71fe;
+    color: #fff;
+
+  }
+`;
